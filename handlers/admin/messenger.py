@@ -28,7 +28,11 @@ async def create_mailing(message: Message, bot: Bot, state: FSMContext):
                                                      f"Новый текст: {sms_text}")
         await state.clear()
     except Exception as error:
-        print(f"При попытке обновить рассылку {error}")
+        with open('errors.txt', 'a') as error_file:
+            error_message = f"Ошибка при попытке обновить рассылку - {error}\n"
+            error_file.write(error_message)
+            print(f"При попытке обновить рассылку {error}")
+
 
 
 
@@ -41,7 +45,10 @@ async def mailing_list_launch(message: Message, bot: Bot):
         for user in users:
             user_id = user[1]
             sendler_status = await bot.send_message(user_id, sms_text)
-            await asyncio.sleep(1)
+            await asyncio.sleep(2)
     except Exception as error:
-        print(f'Не удалось получить список пользователей: {error}')
+        with open('errors.txt', 'a') as error_file:
+            error_message = f"Ошибка не удалось получить список пользователей - {error}\n"
+            error_file.write(error_message)
+            print(f'Не удалось получить список пользователей: {error}')
 

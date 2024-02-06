@@ -21,8 +21,12 @@ class Database():
             self.cursor.execute(query)
             self.cursor.execute(messager)
             self.connection.commit()
-        except sqlite3.Error as Error:
-            print("Ошибка прои создании", Error)
+        except Exception as error:
+            with open('databaseErrors.txt', 'a') as error_file:
+                error_message = f"Ошибка при создании базы данных - {error}\n"
+                error_file.write(error_message)
+                print("Ошибка при создании базы данных", error)
+
 
 
     def add_user(self, chat_id, user_name):
@@ -37,10 +41,16 @@ class Database():
                 print(f"Запись успешно добавлена в базу данных - add_usser {chat_id} + {user_name}")
                 return True
             else:
+                with open('databaseErrors.txt', 'a') as error_file:
+                    error_message = f"Не удалось добавить пользователя {chat_id} {user_name} в базу данных.\n"
+                    error_file.write(error_message)
                 print(f"Не удалось добавить пользователя {chat_id} {user_name} в базу данных.")
                 return False
         except Exception as error:
-            print(f"Ошибка при добавлении записи: {error}")
+            with open('databaseErrors.txt', 'a') as error_file:
+                error_message = f"Ошибка при попытке добавить пользователя в базу данных - {error}\n"
+                error_file.write(error_message)
+            print("Ошибка при попытке добавить пользователя в базу данных", error)
             return False
 
 
@@ -56,10 +66,16 @@ class Database():
                     print(f"Запись успешно добавлена в базу данных - add_sms {sms_text}")
                     return True
                 else:
+                    with open('databaseErrors.txt', 'a') as error_file:
+                        error_message = f"Не удалось добавить sms {sms_text} в базу данных.\n"
+                        error_file.write(error_message)
                     print(f"Не удалось добавить sms {sms_text} в базу данных.")
                     return False
             except Exception as error:
-                print(f"Ошибка при добавлении записи: {error}")
+                with open('databaseErrors.txt', 'a') as error_file:
+                    error_message = f"Ошибка при попытке добавить или обновить запись смс рассылки в бд - {error}\n"
+                    error_file.write(error_message)
+                print(f"Ошибка при попытке добавить или обновить запись смс рассылки в бд - {error}")
                 return False
 
 
@@ -71,6 +87,9 @@ class Database():
             users = self.cursor.fetchall()
             return [user for user in users]
         except sqlite3.Error as error:
+            with open('databaseErrors.txt', 'a') as error_file:
+                error_message = f"Ошибка при получении пользователей: {error}\n"
+                error_file.write(error_message)
             print(f"Ошибка при получении пользователей: {error}")
             return None
 
@@ -82,5 +101,8 @@ class Database():
             messages = self.cursor.fetchall()
             return [sms for sms in messages]
         except sqlite3.Error as error:
-            print(f"Ошибка при получении пользователей: {error}")
+            with open('databaseErrors.txt', 'a') as error_file:
+                error_message = f"Ошибка при получении смс текста: {error}\n"
+                error_file.write(error_message)
+            print(f"Ошибка при получении смс текста: {error}")
             return None

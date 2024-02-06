@@ -11,6 +11,7 @@ from handlers.admin.messenger import start_create, create_mailing, mailing_list_
 from utils.database import Database
 from state.sendler import Messenger
 from filters.CheckAdmin import CheckAdmin
+from utils.commands import set_commands
 
 load_dotenv()
 
@@ -35,14 +36,19 @@ dp = Dispatcher()
 
 CHANNEL_ID = -1002096606551
 
+logging.basicConfig(level=logging.INFO, filename="py_log.log",filemode="w")
+logging.debug("A DEBUG Message")
+logging.info("An INFO")
+logging.warning("A WARNING")
+logging.error("An ERROR")
+logging.critical("A message of CRITICAL severity")
+
 
 
 
 
 # Вызовы handlers
 
-# Обработка вступивших заявок
-# dp.chat_join_request.register(approve_request, F.chat.id == CHANNEL_ID)
 
 # Вывод объекта message
 dp.message.register(object_message, Command(commands='message'))
@@ -64,6 +70,7 @@ dp.message.register(mailing_list_launch, Command(commands='starter'), CheckAdmin
 
 
 async def start():
+    await set_commands(bot)
     db = Database(os.getenv('DATABASE_NAME'))
     try:
         await dp.start_polling(bot, skip_updates=True)

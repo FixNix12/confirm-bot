@@ -40,8 +40,10 @@ async def approve_user(message: Message, bot: Bot):
             await bot(ApproveChatJoinRequest(chat_id=chat_id, user_id=user_id))
             await bot.send_message(message.from_user.id, f"Поздравляю вы прошли капчу")
     except Exception as error:
-            print(f"Ошибка - {error}")
-
+        with open('errors.txt', 'a') as error_file:
+            error_message = f"Ошибка при подтверждении пользователя в канал - {error}\n"
+            error_file.write(error_message)
+            print(error_message)
 
 async def object_message(message: Message, bot: Bot):
     await bot.send_message(message.from_user.id, f' Объект - {message}')
