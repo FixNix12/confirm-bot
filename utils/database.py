@@ -252,7 +252,7 @@ class Database():
             if greeting_data is not None:
                 return greeting_data
             else:
-                return f'Не удалось найти записи по данному id {channel_id}'
+                return None
 
         except Exception as error:
 
@@ -271,7 +271,7 @@ class Database():
             if greeting_data is not None:
                 return greeting_data
             else:
-                return f'Не удалось найти записи кноппок по данному id {channel_id}'
+                return None
 
         except Exception as error:
 
@@ -371,7 +371,7 @@ class Database():
             if greeting_data is not None:
                 return greeting_data
             else:
-                return f'Не удалось найти записи по данному id {channel_id}'
+                return False
 
         except Exception as error:
 
@@ -390,7 +390,7 @@ class Database():
             if greeting_data is not None:
                 return greeting_data
             else:
-                return f'Не удалось найти записи кноппок по данному id {channel_id}'
+                return False
 
         except Exception as error:
 

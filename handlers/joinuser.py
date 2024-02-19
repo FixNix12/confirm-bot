@@ -34,37 +34,45 @@ async def approve_request(event, bot: Bot):
 
         greeting_info = [db.select_channel_info(request_id)]
         greeting_btns = [db.select_channel_btns(request_id)]
+        print(f'{greeting_info}\n'
+              f'{greeting_btns}')
 
         global text_marker
         global video_marker
         global btns_marker
 
+        if greeting_info != [None]:
+            for greeting_item in greeting_info:
+                if greeting_item[0]:
+                    greeting_text = greeting_item[0]
+                    text_marker = True
+                else:
+                    greeting_text = ""
+                    text_marker = False
 
-        for greeting_item in greeting_info:
-            if greeting_item[0]:
-                greeting_text = greeting_item[0]
-                text_marker = True
-            else:
-                greeting_text = ""
-                text_marker = False
+                if greeting_item[1]:
+                    greeting_video = greeting_item[1]
+                    video_marker = True
+                else:
+                    greeting_video = ""
+                    video_marker = False
+        else:
+            text_marker = False
+            video_marker = False
 
-            if greeting_item[1]:
-                greeting_video = greeting_item[1]
-                video_marker = True
-            else:
-                greeting_video = ""
-                video_marker = False
+        if greeting_btns != [None]:
+            for btn_item in greeting_btns:
+                if btn_item[0] and btn_item[1]:
+                    btn_text = btn_item[0]
+                    btn_link = btn_item[1]
 
-        for btn_item in greeting_btns:
-            if btn_item[0] and btn_item[1]:
-                btn_text = btn_item[0]
-                btn_link = btn_item[1]
+                    channel_invite = await get_channels_key(btn_text, btn_link)
 
-                channel_invite = await get_channels_key(btn_text, btn_link)
-
-                btns_marker = True
-            else:
-                btns_marker = False
+                    btns_marker = True
+                else:
+                    btns_marker = False
+        else:
+            btns_marker = False
 
 
         if video_marker and text_marker:
