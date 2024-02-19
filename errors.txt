@@ -5,3 +5,67 @@
 Ошибка не удалось получить список пользователей - Telegram server says - Bad Request: chat not found
 Ошибка не удалось получить список пользователей - Telegram server says - Bad Request: chat not found
 Ошибка не удалось получить список пользователей - Telegram server says - Bad Request: chat not found
+Ошибка при попытке создать запись канала - object bool can't be used in 'await' expression
+Ошибка при попытке создать запись канала - object bool can't be used in 'await' expression
+Ошибка при загрузить видео - [Errno 2] No such file or directory: 'media/videos/doc_2024-02-13_20-03-25.mp4'
+Ошибка при загрузить видео - [Errno 2] No such file or directory: './media/videos/doc_2024-02-13_20-03-25.mp4'
+Ошибка при загрузке видео - too many values to unpack (expected 2)
+Ошибка при загрузке видео - too many values to unpack (expected 2)
+Ошибка при загрузке видео - too many values to unpack (expected 2)
+Ошибка при загрузке видео - too many values to unpack (expected 2)
+Ошибка при загрузке видео - too many values to unpack (expected 2)
+Ошибка при загрузке видео - too many values to unpack (expected 2)
+Ошибка при загрузке видео - too many values to unpack (expected 2)
+Ошибка при загрузке видео - too many values to unpack (expected 2)
+Ошибка при загрузке видео - too many values to unpack (expected 2)
+Ошибка при загрузке видео - 'int' object is not subscriptable
+Ошибка при загрузке видео - 'int' object is not subscriptable
+Ошибка при загрузке видео - 'int' object is not subscriptable
+Ошибка при попытке добавить запись видео в базу данных - 'coroutine' object has no attribute 'get'
+Ошибка при попытке добавить запись видео в базу данных - 'coroutine' object has no attribute 'get'
+Ошибка при событии вступлении события в канал - 'Database' object has no attribute 'select_channel_text'
+Ошибка при событии вступлении события в канал - too many values to unpack (expected 2)
+Ошибка при событии вступлении события в канал - too many values to unpack (expected 2)
+Ошибка при событии вступлении события в канал - 4 validation errors for SendMessage
+reply_markup.InlineKeyboardMarkup
+  Input should be a valid dictionary or instance of InlineKeyboardMarkup [type=model_type, input_value=[[InlineKeyboardButton(te...k_game=None, pay=None)]], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+reply_markup.ReplyKeyboardMarkup
+  Input should be a valid dictionary or instance of ReplyKeyboardMarkup [type=model_type, input_value=[[InlineKeyboardButton(te...k_game=None, pay=None)]], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+reply_markup.ReplyKeyboardRemove
+  Input should be a valid dictionary or instance of ReplyKeyboardRemove [type=model_type, input_value=[[InlineKeyboardButton(te...k_game=None, pay=None)]], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+reply_markup.ForceReply
+  Input should be a valid dictionary or instance of ForceReply [type=model_type, input_value=[[InlineKeyboardButton(te...k_game=None, pay=None)]], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+Ошибка при событии вступлении события в канал - 4 validation errors for SendMessage
+reply_markup.InlineKeyboardMarkup
+  Input should be a valid dictionary or instance of InlineKeyboardMarkup [type=model_type, input_value=<coroutine object get_cha...y at 0x00000214930A2B60>, input_type=coroutine]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+reply_markup.ReplyKeyboardMarkup
+  Input should be a valid dictionary or instance of ReplyKeyboardMarkup [type=model_type, input_value=<coroutine object get_cha...y at 0x00000214930A2B60>, input_type=coroutine]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+reply_markup.ReplyKeyboardRemove
+  Input should be a valid dictionary or instance of ReplyKeyboardRemove [type=model_type, input_value=<coroutine object get_cha...y at 0x00000214930A2B60>, input_type=coroutine]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+reply_markup.ForceReply
+  Input should be a valid dictionary or instance of ForceReply [type=model_type, input_value=<coroutine object get_cha...y at 0x00000214930A2B60>, input_type=coroutine]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+Ошибка не удалось получить список пользователей - Telegram server says - Forbidden: bot was blocked by the user
+Ошибка не удалось получить список пользователей - Telegram server says - Forbidden: bot was blocked by the user
+Ошибка не удалось получить список пользователей - Telegram server says - Bad Request: inline keyboard button URL 'е' is invalid: Wrong HTTP URL
+Ошибка не удалось отправить смс пользователю 6544531515  - Telegram server says - Bad Request: inline keyboard button URL 'е' is invalid: Wrong HTTP URL
+Ошибка при функции старта команды удаления delete_channel - 4 validation errors for SendMessage
+reply_markup.InlineKeyboardMarkup
+  Input should be a valid dictionary or instance of InlineKeyboardMarkup [type=model_type, input_value=<coroutine object get_cha...d at 0x0000016C46449C60>, input_type=coroutine]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+reply_markup.ReplyKeyboardMarkup
+  Input should be a valid dictionary or instance of ReplyKeyboardMarkup [type=model_type, input_value=<coroutine object get_cha...d at 0x0000016C46449C60>, input_type=coroutine]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+reply_markup.ReplyKeyboardRemove
+  Input should be a valid dictionary or instance of ReplyKeyboardRemove [type=model_type, input_value=<coroutine object get_cha...d at 0x0000016C46449C60>, input_type=coroutine]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+reply_markup.ForceReply
+  Input should be a valid dictionary or instance of ForceReply [type=model_type, input_value=<coroutine object get_cha...d at 0x0000016C46449C60>, input_type=coroutine]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type

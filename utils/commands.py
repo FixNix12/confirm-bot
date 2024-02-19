@@ -9,13 +9,9 @@ async def set_commands(bot: Bot):
             description='Запускаем Бота'
         ),
         BotCommand(
-            command='messanger',
-            description='Команда для старта записи нового сообщения'
-        ),
-        BotCommand(
-            command='starter',
-            description='Команда для запуска рассылки'
-        ),
+            command='mainmenu',
+            description='Команда откроет основное меню управления'
+        )
     ]
 
     await bot.set_my_commands(commands, BotCommandScopeDefault())
