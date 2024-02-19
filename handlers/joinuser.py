@@ -85,7 +85,7 @@ async def approve_request(event, bot: Bot):
 
 
         if btns_marker:
-            await bot.send_message(chat_id=user_id, text=f"Так же подпишитесь на интересные каналы", reply_markup=channel_invite)
+            await bot.send_message(chat_id=user_id, text=f"Подпишитесь на наши другие проекты", reply_markup=channel_invite)
             await asyncio.sleep(1)
 
 
